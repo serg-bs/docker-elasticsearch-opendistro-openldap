@@ -1,4 +1,4 @@
-FROM docker.elastic.co/elasticsearch/elasticsearch-oss:6.6.2
+FROM sergbs/elasticsearch-oss:6.6.2
 USER root
 WORKDIR /usr/share/elasticsearch/
 

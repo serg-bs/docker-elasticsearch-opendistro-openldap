@@ -1,4 +1,4 @@
-FROM docker.elastic.co/kibana/kibana-oss:6.6.2
+FROM sergbs/kibana-oss:6.6.2
 USER root
 WORKDIR /usr/share/kibana/
 

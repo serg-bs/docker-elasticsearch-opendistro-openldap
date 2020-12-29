@@ -29,8 +29,8 @@ opendistro_security:
               - openldap:389
             bind_dn: cn=admin,dc=example,dc=org
             password: admin
-            userbase: 'ou=stanislav-organisation-unit,dc=example,dc=org'
-            usersearch: '(&(objectClass=posixAccount)(cn={0}))'
+            userbase: 'dc=example,dc=org'
+            usersearch: '(cn={0})'
             username_attribute: cn
     authz:    
       roles_from_myldap:
@@ -49,10 +49,10 @@ opendistro_security:
             bind_dn: cn=admin,dc=example,dc=org
             password: admin
             rolebase: 'dc=example,dc=org'            
-            rolesearch: '(&(objectClass=organizationalRole)(roleOccupant={0}))'
+            rolesearch: '(cn={0})'
             userroleattribute: null
             userrolename: disabled
             rolename: cn
             resolve_nested_roles: true
-            userbase: 'ou=stanislav-organisation-unit,dc=example,dc=org' 
-            usersearch: '(&(objectClass=posixAccount)(cn={0}))'
+            userbase: 'dc=example,dc=org'
+            usersearch: '(cn={0})'

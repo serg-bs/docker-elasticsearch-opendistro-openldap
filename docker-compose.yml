@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.3"
 
 services:
   elasticsearch:
@@ -70,4 +70,3 @@ volumes:
 
 networks:
   elastic-network:
-    name: elastic-network

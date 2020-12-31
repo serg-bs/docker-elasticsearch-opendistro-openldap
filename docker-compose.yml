@@ -11,10 +11,9 @@ services:
     volumes:
       # - elasticsearch-vol:/usr/share/elasticsearch/data 
       - ./elastisearch-opendistro-sec/config.yml:/usr/share/elasticsearch/plugins/opendistro_security/securityconfig/config.yml
+      - ./elastisearch-opendistro-sec/roles_mapping.yml:/usr/share/elasticsearch/plugins/opendistro_security/securityconfig/roles_mapping.yml
     environment:
-      - cluster.name=docker-cluster
-      - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
+      - discovery.type=single-node
     ulimits:
       memlock:
         soft: -1

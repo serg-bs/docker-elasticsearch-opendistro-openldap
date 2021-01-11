@@ -3,15 +3,15 @@ version: "3.3"
 services:
   elasticsearch:
     build: ./elastisearch-opendistro-sec
-    image: stanislavprihoda/elastic-opendistro-sec 
+    image: elastic
     container_name: elasticsearch
     ports:
       - "9200:9200"
       - "9300:9300"
     volumes:
       # - elasticsearch-vol:/usr/share/elasticsearch/data 
-      - ./elastisearch-opendistro-sec/config.yml:/usr/share/elasticsearch/plugins/opendistro_security/securityconfig/config.yml
-      - ./elastisearch-opendistro-sec/roles_mapping.yml:/usr/share/elasticsearch/plugins/opendistro_security/securityconfig/roles_mapping.yml
+      - ./elastisearch-opendistro-sec/config.yml:/opt/bitnami/elasticsearch/plugins/opendistro_security/securityconfig/config.yml
+      - ./elastisearch-opendistro-sec/roles_mapping.yml:/opt/bitnami/elasticsearch/plugins/opendistro_security/securityconfig/roles_mapping.yml
     environment:
       - discovery.type=single-node
     ulimits:
@@ -24,13 +24,14 @@ services:
       - openldap
   kibana:
     build: ./kibana-opendistro-sec
-    image: stanislavprihoda/kibana-opendistro-sec
+    image: kibana
     container_name: kibana
+    depends_on:
+      - elasticsearch
     ports:
       - "5601:5601"
     volumes:
-      - ./kibana-opendistro-sec/kibana.yml:/usr/share/kibana/config/kibana.yml
-      - ./certificates/:/usr/share/kibana/config/certificates/
+      - ./kibana-opendistro-sec/kibana.yml:/bitnami/kibana/conf/kibana.yml
     networks:
       - elastic-network
   openldap:

@@ -6,13 +6,13 @@ elasticsearch.hosts: https://elasticsearch:9200
 elasticsearch.username: "kibanaserver"
 elasticsearch.password: "kibanaserver"
 elasticsearch.ssl.verificationMode: certificate
-elasticsearch.ssl.certificateAuthorities: "/usr/share/kibana/config/certificates/root-ca.pem"
+elasticsearch.ssl.certificateAuthorities: "/opt/bitnami/kibana/certificates/root-ca.pem"
 
 opendistro_security.auth.type: "basicauth"
 opendistro_security.basicauth.forbidden_usernames: ["kibanaserver", "logstash"]
 
 server.ssl.enabled: true
-server.ssl.key: "/usr/share/kibana/config/certificates/esnode-key.pem"
-server.ssl.certificate: "/usr/share/kibana/config/certificates/esnode.pem"
+server.ssl.key: "/opt/bitnami/kibana/certificates/esnode-key.pem"
+server.ssl.certificate: "/opt/bitnami/kibana/certificates/esnode.pem"
 
 opendistro_security.accountinfo.enabled: true

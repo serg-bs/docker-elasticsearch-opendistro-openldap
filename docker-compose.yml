@@ -3,7 +3,7 @@ version: "3.3"
 services:
   elasticsearch:
     build: ./elastisearch-opendistro-sec
-    image: sergbs/elastic
+    image: sergbs/elastic:1
     container_name: elasticsearch
     ports:
       - "9200:9200"
@@ -24,7 +24,7 @@ services:
       - openldap
   kibana:
     build: ./kibana-opendistro-sec
-    image: sergbs/kibana
+    image: sergbs/kibana:1
     container_name: kibana
     depends_on:
       - elasticsearch

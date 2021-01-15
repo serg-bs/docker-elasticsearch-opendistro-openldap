@@ -6,4 +6,5 @@ RUN touch /opt/bitnami/elasticsearch/config/elasticsearch.yml
 USER root
 RUN /bin/bash /opt/bitnami/elasticsearch/plugins/opendistro_security/tools/install_demo_configuration.sh -y -i
 RUN mv /opt/bitnami/elasticsearch/config/elasticsearch.yml /opt/bitnami/elasticsearch/config/my_elasticsearch.yml
+COPY my_elasticsearch.yml /opt/bitnami/elasticsearch/config/my_elasticsearch.yml
 USER 1001

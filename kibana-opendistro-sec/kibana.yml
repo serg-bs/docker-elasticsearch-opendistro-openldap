@@ -11,8 +11,4 @@ elasticsearch.ssl.certificateAuthorities: "/opt/bitnami/kibana/certificates/root
 opendistro_security.auth.type: "basicauth"
 opendistro_security.basicauth.forbidden_usernames: ["kibanaserver", "logstash"]
 
-server.ssl.enabled: true
-server.ssl.key: "/opt/bitnami/kibana/certificates/esnode-key.pem"
-server.ssl.certificate: "/opt/bitnami/kibana/certificates/esnode.pem"
-
 opendistro_security.accountinfo.enabled: true

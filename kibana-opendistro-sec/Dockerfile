@@ -1,4 +1,4 @@
-FROM elastic as base
+FROM sergbs/elastic as base
 FROM bitnami/kibana:7.10.0
 
 # install open distro security plugin to Kibana

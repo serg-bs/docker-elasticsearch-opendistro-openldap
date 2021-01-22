@@ -60,3 +60,5 @@ config:
             resolve_nested_roles: true
             userbase: 'dc=example,dc=org'
             usersearch: '(cn={0})'
+            skip_users:
+              - kibanaserver

@@ -1,6 +1,8 @@
 FROM bitnami/elasticsearch:7.10.0
 
 RUN elasticsearch-plugin install -b https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-security/opendistro_security-1.12.0.0.zip
+RUN elasticsearch-plugin install -b https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-job-scheduler/opendistro-job-scheduler-1.12.0.0.zip
+RUN elasticsearch-plugin install -b https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-index-management/opendistro_index_management-1.12.0.1.zip
 RUN touch /opt/bitnami/elasticsearch/config/elasticsearch.yml
 
 USER root
